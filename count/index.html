@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>TRUMPETERS DOUBLE LAUNCH</title>
+  <style>
+
+    body {
+      background:url(back22.jpg)no-repeat center center fixed;
+      size:cover;
+	font family: century gothic;
+	color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 40px;
+	font-family: arial black;
+    }
+    .timer {
+      font-size: 3em;
+      margin-top: 15px;
+	font-family: arial black;
+    }
+	h3{
+	font-family: forte;
+	margin-top:0px;
+	margin-bottom:0px;
+	}
+	h2{
+	margin-bottom:0px;
+	margin-top:0px
+	}
+  </style>
+</head>
+<body>
+  <h1>THE TRUMPETERS ANGLICAN CHOIR</h1>
+<h2>COUNNTING DOWN TO 31 AUGUST 2025</h2>
+<h3>DOUBLE LAUNCH IN:-</h3>
+  <div class="timer" id="countdown">Loading...</div>
+
+  <script>
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date('2025-08-31T00:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdown.innerHTML = "Launched!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
